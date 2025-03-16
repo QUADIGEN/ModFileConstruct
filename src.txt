@@ -1,1 +1,18 @@
-print("hello roblox!")
+local model = workspace.Plots.Plot1.Build
+
+local requestParameters = {
+
+  CreatorId = 7480232032,
+
+  CreatorType = Enum.AssetCreatorType.User,
+
+  Name = "The plane",
+
+  Description = "a good asset",
+
+}
+
+
+local ok, result, idOrUploadErr = pcall(function()
+  return AssetService:CreateAssetAsync(model, Enum.AssetType.Model, requestParameters)
+end)
